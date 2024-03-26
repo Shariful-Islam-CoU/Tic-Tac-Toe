@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginLeft="30dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/rectangle_shap2"
+
+
+    android:layout_height="180dp">
+
+    <EditText
+        android:id="@+id/plr1Id"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:hint="Player 1"
+        android:textStyle="bold"
+        android:textColor="#FD3E52" />
+
+    <EditText
+        android:id="@+id/plr2Id"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:hint="Player 2"
+        android:textColor="#FD3E52"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/savebtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/shape5"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

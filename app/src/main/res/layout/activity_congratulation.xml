@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    android:gravity="center"
+    tools:context=".Congratulation_Activity">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/congra_iconId"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/congra_titleID"
+        android:text="Congratulations!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#FD3E52"
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/congra_messageID"
+        android:text="Player 1 wins the match"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FB7F8C"
+        android:layout_marginBottom="100dp"
+
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="100dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/play_Again_btnID"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_shap"
+            android:text="Play Again"
+            android:textAllCaps="false"
+            android:textColor="#FD3E52"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/takeMeHomeBtnID"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape5"
+            android:text="Take me home"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

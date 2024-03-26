@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom|center"
+    android:background="@drawable/start_page_bg"
+    tools:context=".Start_Page">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/play_ai_ID"
+        android:text="Play with AI"
+        android:textColor="#FD3E52"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:background="@drawable/rectangle_shap"
+        android:layout_margin="20sp"
+
+
+
+        android:layout_marginBottom="40dp"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/play_two_playersID"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:text="Multi Player"
+        android:background="@drawable/shape5"
+
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+
+        />
+
+</LinearLayout>
