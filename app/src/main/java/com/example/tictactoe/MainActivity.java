@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private char ooo,xxx;
     private Handler customHandler1= new Handler();
     private Handler customHandler2= new Handler();
-    private double p1time=0,p2time=0,startTime1=0,updateTime1=0,timeMilli1=0,timeSwapBuff1=0,startTime2=0,updateTime2=0,timeMilli2=0,timeSwapBuff2=0;
+    private double p1time=0,p2time=0,startTime1=0,updateTime1=0,timeMilli1=0,timeSwapBuff1=0,startTime2=0,updateTime2=0,
+            p1lastMatchTime=0,p2lastMatchTime=0,timeMilli2=0,timeSwapBuff2=0,p1bakiTime=0,p2bakiTime=0;
 
     private AlertDialog.Builder alertDialogBuilder,alertDialogBuilder1,alertDialogBuilder2,alertDialogBuilder3,alertDialogBuilder4;
 
@@ -410,6 +411,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(x1==3||x2==3||x3==3||y1==3||y2==3||y3==3||equ==3||four==3){
                 fp++;
                 p1.setText(""+fp);
+
+
                 setPause1();
                 setPause2();
                 new Handler().postDelayed(new Runnable() {
@@ -583,6 +586,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void congratulations(String a){
+        p1lastMatchTime=p1time;
+        p2lastMatchTime=p2time;
 
         Intent intent=new Intent(MainActivity.this,Congratulation_Activity.class);
 
@@ -618,6 +623,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void draw(){
+        p1lastMatchTime=p1time;
+        p2lastMatchTime=p2time;
         setPause1();
         setPause2();
         Intent intent=new Intent(MainActivity.this,Congratulation_Activity.class);
@@ -653,7 +660,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
     public void restart(){
+        p1timeView.setText(String.format("%.2f",p1lastMatchTime/1000));
+        p2timeView.setText(String.format("%.2f",p2lastMatchTime/1000));
+        timeSwapBuff1=p1lastMatchTime;
+        timeSwapBuff2=p2lastMatchTime;
+        p1time=0;p2time=0;timeMilli1=0;timeMilli2=0;
+
+
+
 
         for_name_change=9;
         k++;
@@ -677,7 +693,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         allempty();
         allWhite();
-        x1=0;x2=0;x3=0;y1=0;y2=0;y3=0;four=0;equ=0;one=0;two=0;three=0;fourr=0;five=0;six=0;seven=0;eight=0;nine=0;
+        x1=0;x2=0;x3=0;y1=0;y2=0;y3=0;four=0;equ=0;
         x11=0;x22=0;x33=0;y11=0;y22=0;y33=0;four1=0;equ1=0;one=0;two=0;three=0;fourr=0;five=0;six=0;seven=0;eight=0;nine=0;
     }
 
@@ -849,8 +865,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void run() {
             timeMilli1= SystemClock.uptimeMillis()-startTime1;
             p1time=timeSwapBuff1+timeMilli1;
-            p1time/=1000;
-            p1timeView.setText(String.format("%.2f",p1time));
+
+
+            p1timeView.setText(String.format("%.2f",p1time/1000));
 
             customHandler1.postDelayed(runnable1,0);
         }
@@ -872,8 +889,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void run() {
             timeMilli2= SystemClock.uptimeMillis()-startTime2;
             p2time=timeSwapBuff2+timeMilli2;
-            p2time/=1000;
-            p2timeView.setText(String.format("%.2f",p2time));
+
+            p2timeView.setText(String.format("%.2f",p2time/1000));
 
             customHandler2.postDelayed(runnable2,0);
         }
