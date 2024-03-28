@@ -55,7 +55,9 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         setContentView(R.layout.activity_play_with_ai);
         b1=findViewById(R.id.txID1);
@@ -147,10 +149,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
             
 
-            calculation(1,1);
+
             clicked++;
             not_clickable();
-            taketime();
+           if(calculation(1,1)==0) taketime();
 
         }
 
@@ -166,10 +168,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(1,2);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(1,2)==0) taketime();
 
         }
 
@@ -185,10 +187,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(1,3);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(1,3)==0) taketime();
 
         }
 
@@ -204,10 +206,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(2,1);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(2,1)==0) taketime();
 
         }
 
@@ -223,10 +225,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(2,2);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(2,2)==0) taketime();
 
         }
 
@@ -242,10 +244,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(2,3);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(2,3)==0) taketime();
 
         }
 
@@ -261,10 +263,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(3,1);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(3,1)==0) taketime();
 
         }
 
@@ -280,10 +282,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(3,2);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(3,2)==0) taketime();
 
         }
 
@@ -299,10 +301,10 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             }
 
 
-            calculation(3,3);
+
             clicked++;
             not_clickable();
-            taketime();
+            if(calculation(3,3)==0) taketime();
 
         }
         if(R.id.buttonID==view.getId()){
@@ -535,34 +537,306 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
                 player1color();
             }
             else if(seven==0&&x11==1&&y11==1&&x2==1&&y2==1&&x3==1&&y3==1){
-                seven=1;x33++;y11++;four1++;
-                b7.setText(X);
-                b7.setTextColor(Color.parseColor(X_color));
-                player1color();
+
+                Random random= new Random();
+                int d= random.nextInt();
+                if(d<0) d=d*(-1);
+                int b=d%10;
+
+                if(b%3!=0){
+                    if(three==0){
+                        three=1;x11++;y33++;four1++;
+                        b3.setText(X);
+                        b3.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else{
+                        seven=1;x33++;y11++;four1++;
+                        b7.setText(X);
+                        b7.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+                else{
+                    if(six==0){
+                        six=1;x22++;y33++;
+                        b6.setText(X);
+                        b6.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+
+                    else if(fourr==0){
+                        fourr=1;x22++;y11++;
+                        b4.setText(X);
+                        b4.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(two==0){
+                        two=1;x11++;y22++;
+                        b2.setText(X);
+                        b2.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(eight==0){
+                        eight=1;x33++;y22++;
+                        b8.setText(X);
+                        b8.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+
+
             }
             else if(nine==0&&x11==1&&y33==1&&x2==1&&y2==1&&x3==1&&y1==1){
-                nine=1;x33++;y33++;equ1++;
-                b9.setText(X);
-                b9.setTextColor(Color.parseColor(X_color));
-                player1color();
+
+                Random random= new Random();
+                int d= random.nextInt();
+                if(d<0) d=d*(-1);
+                int b=d%10;
+
+                if(b%3!=0){
+                    if(one==0){
+                        one=1;x11++;y11++;equ1++;
+                        b1.setText(X);
+                        b1.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else{
+                        nine=1;x33++;y33++;equ1++;
+                        b9.setText(X);
+                        b9.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+                else{
+                    if(six==0){
+                        six=1;x22++;y33++;
+                        b6.setText(X);
+                        b6.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+
+                    else if(fourr==0){
+                        fourr=1;x22++;y11++;
+                        b4.setText(X);
+                        b4.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(two==0){
+                        two=1;x11++;y22++;
+                        b2.setText(X);
+                        b2.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(eight==0){
+                        eight=1;x33++;y22++;
+                        b8.setText(X);
+                        b8.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+
+
             }
             else if(nine==0&&x33==1&&y11==1&&x2==1&&y2==1&&x1==1&&y3==1){
-                nine=1;x33++;y33++;equ1++;
-                b9.setText(X);
-                b9.setTextColor(Color.parseColor(X_color));
-                player1color();
+
+                Random random= new Random();
+                int d= random.nextInt();
+                if(d<0) d=d*(-1);
+                int b=d%10;
+
+                if(b%3!=0){
+                    if(one==0){
+                        one=1;x11++;y11++;equ1++;
+                        b1.setText(X);
+                        b1.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else{
+                        nine=1;x33++;y33++;equ1++;
+                        b9.setText(X);
+                        b9.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+                else{
+                    if(six==0){
+                        six=1;x22++;y33++;
+                        b6.setText(X);
+                        b6.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+
+                    else if(fourr==0){
+                        fourr=1;x22++;y11++;
+                        b4.setText(X);
+                        b4.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(two==0){
+                        two=1;x11++;y22++;
+                        b2.setText(X);
+                        b2.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(eight==0){
+                        eight=1;x33++;y22++;
+                        b8.setText(X);
+                        b8.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+
+
             }
             else if(seven==0&&x33==1&&y33==1&&x2==1&&y2==1&&x1==1&&y1==1){
-                seven=1;x33++;y11++;four1++;
-                b7.setText(X);
-                b7.setTextColor(Color.parseColor(X_color));
-                player1color();
+                Random random= new Random();
+                int d= random.nextInt();
+                if(d<0) d=d*(-1);
+                int b=d%10;
+
+                if(b%3!=0){
+                    if(three==0){
+                        three=1;x11++;y33++;four1++;
+                        b3.setText(X);
+                        b3.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else{
+                        seven=1;x33++;y11++;four1++;
+                        b7.setText(X);
+                        b7.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+                else{
+                    if(six==0){
+                        six=1;x22++;y33++;
+                        b6.setText(X);
+                        b6.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+
+                    else if(fourr==0){
+                        fourr=1;x22++;y11++;
+                        b4.setText(X);
+                        b4.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(two==0){
+                        two=1;x11++;y22++;
+                        b2.setText(X);
+                        b2.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(eight==0){
+                        eight=1;x33++;y22++;
+                        b8.setText(X);
+                        b8.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
             }
-            else if((one==1&&nine==1&&x1==1&&y1==1&&x3==1&&y3==1)||((three==1&&seven==1&&x1==1&&y1==1&&x3==1&&y3==1))){
-                two=1;x11++;y22++;
-                b2.setText(X);
-                b2.setTextColor(Color.parseColor(X_color));
-                player1color();
+            else if((one==1&&nine==1&&x1==1&&y1==1&&x3==1&&y3==1)){
+
+                Random random= new Random();
+                int d= random.nextInt();
+                if(d<0) d=d*(-1);
+                int b=d%10;
+
+                if(b%3==0){
+                    if(three==0){
+                        three=1;x11++;y33++;four1++;
+                        b3.setText(X);
+                        b3.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else{
+                        seven=1;x33++;y11++;four1++;
+                        b7.setText(X);
+                        b7.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+                else{
+                    if(six==0){
+                        six=1;x22++;y33++;
+                        b6.setText(X);
+                        b6.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+
+                    else if(fourr==0){
+                        fourr=1;x22++;y11++;
+                        b4.setText(X);
+                        b4.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(two==0){
+                        two=1;x11++;y22++;
+                        b2.setText(X);
+                        b2.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(eight==0){
+                        eight=1;x33++;y22++;
+                        b8.setText(X);
+                        b8.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+
+
+            }
+            else if(((three==1&&seven==1&&x1==1&&y1==1&&x3==1&&y3==1))){
+
+                Random random= new Random();
+                int d= random.nextInt();
+                if(d<0) d=d*(-1);
+                int b=d%10;
+
+                if(b%3==0){
+                    if(one==0){
+                        one=1;x11++;y11++;equ1++;
+                        b1.setText(X);
+                        b1.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else{
+                        nine=1;x33++;y33++;equ1++;
+                        b9.setText(X);
+                        b9.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+                else{
+                    if(six==0){
+                        six=1;x22++;y33++;
+                        b6.setText(X);
+                        b6.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+
+                    else if(fourr==0){
+                        fourr=1;x22++;y11++;
+                        b4.setText(X);
+                        b4.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(two==0){
+                        two=1;x11++;y22++;
+                        b2.setText(X);
+                        b2.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                    else if(eight==0){
+                        eight=1;x33++;y22++;
+                        b8.setText(X);
+                        b8.setTextColor(Color.parseColor(X_color));
+                        player1color();
+                    }
+                }
+
             }
             else if(one==0&&x1>=1&&y1>=1){
                 one=1;x11++;y11++;equ1++;
@@ -689,7 +963,7 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-    public void calculation(int x,int y){
+    public int calculation(int x,int y){
 
         {
 
@@ -702,14 +976,6 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             if(x==y) equ++;
             if(x+y==4) four++;
 
-            if(x1==3||x2==3||x3==3||y1==3||y2==3||y3==3||equ==3||four==3){
-
-
-                congratulations(player1name);
-                one=1;two=1;three=1;fourr=1;five=1;six=1;seven=1;eight=1;nine=1;
-            }
-
-
             if(x1==3) allGreen(1);
             else if(x2==3) allGreen(2);
             else if(x3==3) allGreen(3);
@@ -718,6 +984,24 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             else if(y3==3) allGreen(6);
             else if(equ==3) allGreen(7);
             else if(four==3) allGreen(8);
+
+            if(x1==3||x2==3||x3==3||y1==3||y2==3||y3==3||equ==3||four==3){
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        congratulations(player1name);
+                    }
+                },400);
+
+
+                one=1;two=1;three=1;fourr=1;five=1;six=1;seven=1;eight=1;nine=1;
+                return 1;
+            }
+            else return 0;
+
+
+
         }
 
 
@@ -874,6 +1158,7 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
 
 
     public void restart(){
+        finishBtn_nameChange();
 
         {
             namep2.setTextColor(Color.parseColor(darkGreen));
@@ -882,7 +1167,7 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             p1Icon.setBackgroundColor(Color.parseColor(lightGreen));
         }
 
-
+        clickable();
         allempty();
         allWhite();
         x1=0;x2=0;x3=0;y1=0;y2=0;y3=0;four=0;equ=0;
@@ -980,15 +1265,33 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
 
 
     public void yes_for_newgame(){
-        newgameBtn.setText("Take me home");
+
         clicked=0;
         for_name_change=0;
          if(fp>0||sp>0){
             if(fp>sp) congratulationsGame(1);
             else if(fp<sp) congratulationsGame(2);
+            else {
+                Intent intent=new Intent(Play_with_AI.this,Congratulation_Activity.class);
+                intent.putExtra("Congrass_title","Wow Draw!");
+                intent.putExtra("congass_message","You are intelligent like AI");
+                intent.putExtra("for_icon","2");
+                intent.putExtra("where","ai");
+                intent.putExtra("p1point",fp);
+                intent.putExtra("p2point",sp);
+                intent.putExtra("p1time",0);
+                intent.putExtra("p2time",0);
+                intent.putExtra("p1name",player1name);
+                intent.putExtra("p2name",player2name);
+                startActivity(intent);
+                taketime4();
+                finish();
+            }
+            fp=0;sp=0;
 
         }
         else{
+             newgameBtn.setText("Take me home");
             p1.setText("0");
             p2.setText("0");
 
@@ -1028,7 +1331,7 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 congratulations("AI");
             }
-        },400);
+        },600);
     }
 
     private void taketime3() {
@@ -1047,6 +1350,7 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                newgameBtn.setText("Take me home");
                 clicked=0;
                 for_name_change=0;
                 p1.setText("0");

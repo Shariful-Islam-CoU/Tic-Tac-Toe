@@ -375,7 +375,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             setPause1();
             setPause2();
 
-           if(p1time>0||p2time>0) alert(2);
+           if(timeSwapBuff2>0||timeSwapBuff1>0) alert(2);
            else{
                Intent intent =new Intent(MainActivity.this,Start_Page.class);
                startActivity(intent);
@@ -599,8 +599,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("where","OK");
         intent.putExtra("p1point",fp);
         intent.putExtra("p2point",sp);
-        intent.putExtra("p1time",p1time);
-        intent.putExtra("p2time",p2time);
+        intent.putExtra("p1time",timeSwapBuff1);
+        intent.putExtra("p2time",timeSwapBuff2);
         intent.putExtra("p1name",player1name);
         intent.putExtra("p2name",player2name);
 
@@ -609,7 +609,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 startActivity(intent);
             }
-        },400);
+        },600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -637,8 +637,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("where","OK");
         intent.putExtra("p1point",fp);
         intent.putExtra("p2point",sp);
-        intent.putExtra("p1time",p1time);
-        intent.putExtra("p2time",p2time);
+        intent.putExtra("p1time",timeSwapBuff1);
+        intent.putExtra("p2time",timeSwapBuff2);
         intent.putExtra("p1name",player1name);
         intent.putExtra("p2name",player2name);
 
@@ -662,6 +662,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     public void restart(){
+
         p1timeView.setText(String.format("%.2f",p1lastMatchTime/1000));
         p2timeView.setText(String.format("%.2f",p2lastMatchTime/1000));
         timeSwapBuff1=p1lastMatchTime;
@@ -671,7 +672,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        for_name_change=9;
+        for_name_change=0;
         k++;
 
         if(k%2==0) {
@@ -690,7 +691,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             c=1;
         }
-
+        finishBtn_nameChange();
         allempty();
         allWhite();
         x1=0;x2=0;x3=0;y1=0;y2=0;y3=0;four=0;equ=0;
@@ -773,7 +774,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
                 restart();
+                newgameBtn.setText("Take me home");
                 p1.setText("0");
                 p2.setText("0");
                 p1timeView.setText("0:00");
@@ -842,8 +845,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             X=X.toUpperCase();
             if(((ooo>='a'&&ooo<='z')||(ooo>='A'&&ooo<='Z'))&&((xxx>='a'&&xxx<='z')||(xxx>='A'&&xxx<='Z'))&&ooo!=xxx){
               setOvsX();
-               /* O_TV.setText(O);
-                X_TV.setText(X);*/
             }
             else{
                 O="O";
@@ -948,11 +949,11 @@ public void alert(int a){
 
 
     public void yes_for_newgame(){
-        newgameBtn.setText("Take me home");
+
 
         for_name_change=0;
         if(sp==0&&fp==0&&drw>0){
-            if(p1time<p2time){
+            if(timeSwapBuff1<timeSwapBuff2){
                 congratulationsGame(11);
             }
             else congratulationsGame(22);
@@ -963,19 +964,19 @@ public void alert(int a){
             if(fp>sp) congratulationsGame(1);
             else if(fp<sp) congratulationsGame(2);
             else {
-                if(p1time<p2time){
+                if(timeSwapBuff1<timeSwapBuff2){
                     congratulationsGame(11);
                 }
                 else congratulationsGame(22);
             }
         }
         else{
+            newgameBtn.setText("Take me home");
             p1.setText("0");
             p2.setText("0");
             p1timeView.setText("0:00");
             p2timeView.setText("0:00");
         }
-
 
 
 
@@ -1036,7 +1037,7 @@ public void alert(int a){
     }
 
     public void finishBtn_nameChange(){
-        if(for_name_change>0||sp>0||fp>0) newgameBtn.setText("Finish Game");
+        if(for_name_change>0||timeSwapBuff1>0||timeSwapBuff2>0) newgameBtn.setText("Finish Game");
         else{
 
             newgameBtn.setText("Take me home");

@@ -61,6 +61,8 @@ public class Congratulation_Activity extends AppCompatActivity {
         p1time=intent.getDoubleExtra("p1time",0.0);
         p2time=intent.getDoubleExtra("p2time",0.0);
 
+
+
         if(((p1point>0||p2point>0)&&p1point!=p2point)|| p1time>0||p2time>0){
             takeMeHomeBtn.setText("Finish Game");
         }
@@ -154,9 +156,15 @@ public class Congratulation_Activity extends AppCompatActivity {
         Intent intent1=new Intent(Congratulation_Activity.this,Congratulation_Activity.class);
         intent1.putExtra("Congrass_title","Congratulations!");
         if((p1time>0||p2time>0)&&p1point==p2point){
-            intent1.putExtra("Congrass_title","Congrats "+p1name);
-            if(p1time<p2time) intent1.putExtra("congass_message",p1name+" wins the game by time");
-            else intent1.putExtra("congass_message",p2name+" wins the game by time");
+
+            if(p1time<p2time){
+                intent1.putExtra("congass_message",p1name+" wins the game by time");
+                intent1.putExtra("Congrass_title","Congrats "+p1name);
+            }
+            else{
+                intent1.putExtra("congass_message",p2name+" wins the game by time");
+                intent1.putExtra("Congrass_title","Congrats "+p2name);
+            }
         }
         else if(p1point>p2point){
             intent1.putExtra("congass_message",p1name+" wins the game");
