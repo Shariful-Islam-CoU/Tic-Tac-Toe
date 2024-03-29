@@ -558,31 +558,35 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 else{
-                    if(six==0){
-                        six=1;x22++;y33++;
-                        b6.setText(X);
-                        b6.setTextColor(Color.parseColor(X_color));
-                        player1color();
+                    if(one==1||three==1){
+                        if(two==0){
+                            two=1;x11++;y22++;
+                            b2.setText(X);
+                            b2.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+                        else if(eight==0){
+                            eight=1;x33++;y22++;
+                            b8.setText(X);
+                            b8.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+                        else if(six==0){
+                            six=1;x22++;y33++;
+                            b6.setText(X);
+                            b6.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+
+                        else if(fourr==0){
+                            fourr=1;x22++;y11++;
+                            b4.setText(X);
+                            b4.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
                     }
 
-                    else if(fourr==0){
-                        fourr=1;x22++;y11++;
-                        b4.setText(X);
-                        b4.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(two==0){
-                        two=1;x11++;y22++;
-                        b2.setText(X);
-                        b2.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(eight==0){
-                        eight=1;x33++;y22++;
-                        b8.setText(X);
-                        b8.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
+
                 }
 
 
@@ -609,31 +613,37 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 else{
-                    if(six==0){
-                        six=1;x22++;y33++;
-                        b6.setText(X);
-                        b6.setTextColor(Color.parseColor(X_color));
-                        player1color();
+                    if(seven==1||nine==1){
+                        if(eight==0){
+                            eight=1;x33++;y22++;
+                            b8.setText(X);
+                            b8.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+
+
+                        else if(six==0){
+                            six=1;x22++;y33++;
+                            b6.setText(X);
+                            b6.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+
+                        else if(fourr==0){
+                            fourr=1;x22++;y11++;
+                            b4.setText(X);
+                            b4.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+                        else if(two==0){
+                            two=1;x11++;y22++;
+                            b2.setText(X);
+                            b2.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
                     }
 
-                    else if(fourr==0){
-                        fourr=1;x22++;y11++;
-                        b4.setText(X);
-                        b4.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(two==0){
-                        two=1;x11++;y22++;
-                        b2.setText(X);
-                        b2.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(eight==0){
-                        eight=1;x33++;y22++;
-                        b8.setText(X);
-                        b8.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
+
                 }
 
 
@@ -660,31 +670,37 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 else{
-                    if(six==0){
-                        six=1;x22++;y33++;
-                        b6.setText(X);
-                        b6.setTextColor(Color.parseColor(X_color));
-                        player1color();
+                    if(seven==1||nine==1){
+                        if(eight==0){
+                            eight=1;x33++;y22++;
+                            b8.setText(X);
+                            b8.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+
+
+                        else if(six==0){
+                            six=1;x22++;y33++;
+                            b6.setText(X);
+                            b6.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+
+                        else if(fourr==0){
+                            fourr=1;x22++;y11++;
+                            b4.setText(X);
+                            b4.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+                        else if(two==0){
+                            two=1;x11++;y22++;
+                            b2.setText(X);
+                            b2.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
                     }
 
-                    else if(fourr==0){
-                        fourr=1;x22++;y11++;
-                        b4.setText(X);
-                        b4.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(two==0){
-                        two=1;x11++;y22++;
-                        b2.setText(X);
-                        b2.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(eight==0){
-                        eight=1;x33++;y22++;
-                        b8.setText(X);
-                        b8.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
+
                 }
 
 
@@ -710,31 +726,35 @@ public class Play_with_AI extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 else{
-                    if(six==0){
-                        six=1;x22++;y33++;
-                        b6.setText(X);
-                        b6.setTextColor(Color.parseColor(X_color));
-                        player1color();
+                    if(one==1||three==1){
+                        if(two==0){
+                            two=1;x11++;y22++;
+                            b2.setText(X);
+                            b2.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+                        else if(eight==0){
+                            eight=1;x33++;y22++;
+                            b8.setText(X);
+                            b8.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+                        else if(six==0){
+                            six=1;x22++;y33++;
+                            b6.setText(X);
+                            b6.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
+
+                        else if(fourr==0){
+                            fourr=1;x22++;y11++;
+                            b4.setText(X);
+                            b4.setTextColor(Color.parseColor(X_color));
+                            player1color();
+                        }
                     }
 
-                    else if(fourr==0){
-                        fourr=1;x22++;y11++;
-                        b4.setText(X);
-                        b4.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(two==0){
-                        two=1;x11++;y22++;
-                        b2.setText(X);
-                        b2.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
-                    else if(eight==0){
-                        eight=1;x33++;y22++;
-                        b8.setText(X);
-                        b8.setTextColor(Color.parseColor(X_color));
-                        player1color();
-                    }
+
                 }
             }
             else if((one==1&&nine==1&&x1==1&&y1==1&&x3==1&&y3==1)){
